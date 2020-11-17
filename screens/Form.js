@@ -12,8 +12,7 @@ export const FormScreen = () => {
   const [validationMessage, setValidationMessage] = React.useState()
 
   const handleSubmit = () => {
-    const regex = RegExp('^[0-9]{0,10}$')
-    const validatePhoneNumber = regex.test(phoneNumber)
+    const validatePhoneNumber = /\d{10}/.test(phoneNumber)
     if (!validatePhoneNumber || phoneNumber === undefined) {
       setValidationMessage('Wrong format phone number')
       return
