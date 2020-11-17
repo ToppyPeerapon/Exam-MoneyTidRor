@@ -1,4 +1,4 @@
-import { useNavigation } from '@react-navigation/native'
+import { StackActions, useNavigation } from '@react-navigation/native'
 import * as React from 'react'
 import { Button, Text, View } from 'react-native'
 import { useSelector } from 'react-redux'
@@ -11,7 +11,7 @@ export const HomeScreen = () => {
     if (!info) return
     if (!info.name) return
     if (!info.phoneNumber) return
-    navigation.navigate('Login')
+    navigation.dispatch(StackActions.replace('Login'))
   }
 
   return (
